@@ -39,6 +39,10 @@ output: html_document
   hist(totalSteps$steps, main="Total steps taken per day", xlab="Steps", col="deeppink", breaks=20)
   
   ```
+  
+  
+  
+  
   # Task3: Mean and Median of the total number of steps
   
   ```{r}
