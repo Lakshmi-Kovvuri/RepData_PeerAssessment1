@@ -55,15 +55,16 @@ hist(totalSteps$steps, main="Total steps taken per day", xlab="Steps", col="deep
 
   # creating plot for the average steps
 ```{r}
-   g<-ggplot(averageSteps, aes(interval, steps))
+   g1<-ggplot(averageSteps, aes(interval, steps))
 ```
 
   # Setting shape and color for the plot
 ```{r}
-   g1<-g+geom_line(col="blue", lwd=1.2)
+   g1<-g1+geom_line(col="blue", lwd=1.2)
+   ```
 
   # Setting titles for the plot
-
+```{r}
  g1<-g1+ggtitle("Average daily activity pattern")+ xlab ("Time Interval") + ylab("Steps")
  
  print(g1)
