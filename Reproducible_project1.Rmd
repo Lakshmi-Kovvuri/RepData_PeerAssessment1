@@ -60,11 +60,13 @@ hist(totalSteps$steps, main="Total steps taken per day", xlab="Steps", col="deep
 
   # Setting shape and color for the plot
 ```{r}
-   g<-g+geom_line(col="blue", lwd=1.2)
+   g1<-g+geom_line(col="blue", lwd=1.2)
 
   # Setting titles for the plot
 
- g<-g+ggtitle("Average daily activity pattern")+ xlab ("Time Interval") + ylab("Steps")
+ g1<-g1+ggtitle("Average daily activity pattern")+ xlab ("Time Interval") + ylab("Steps")
+ 
+ print(g1)
 
 ```
 
@@ -106,15 +108,17 @@ colnames(ImputedSteps)<-c("Date", "Steps")
 
 # Creating histogram for the imputed steps
 
-g<-ggplot(ImputedSteps, aes(Steps))
+g2<-ggplot(ImputedSteps, aes(Steps))
 
 # setting shape and colors for the plot
 
-g<-g+geom_histogram(boundary=0, binwidth=2000, col="chartreuse4", fill="chartreuse3")
+g2<-g2+geom_histogram(boundary=0, binwidth=2000, col="chartreuse4", fill="chartreuse3")
 
 # setting titles for the plot
 
-g<-g+ggtitle("Histogram of the steps with missing data filled")+xlab("Steps")+ylab("Interval")
+g2<-g2+ggtitle("Histogram of the steps with missing data filled")+xlab("Steps")+ylab("Interval")
+
+print(g2)
 
 # Mean and median of the steps taken after missing data filled
 
@@ -170,16 +174,17 @@ weeksActivity<-aggregate(steps~interval, data=Activity2, FUN=mean, na.rm=TRUE)
 
 # Creating plot for the average daily steps across weekends & weekdays
 
-g<-ggplot(Activity2, aes(x=interval, y=steps, color=TypeOfweek))
+g3<-ggplot(Activity2, aes(x=interval, y=steps, color=TypeOfweek))
 
 # Setting shape for the plot
 
-g<-g+geom_line()+ facet_wrap(~TypeOfweek, ncol=1,nrow=2)
+g3<-g3+geom_line()+ facet_wrap(~TypeOfweek, ncol=1,nrow=2)
 
 # Setting names for the plot
 
-g<-g+labs(title="Average steps for Weekdays & Weekends", x="Interval", y="Steps")
+g3<-g3+labs(title="Average steps for Weekdays & Weekends", x="Interval", y="Steps")
 
+print(g3)
 
 ```
-
+message("Cheers...'echo=TRUE'..")
